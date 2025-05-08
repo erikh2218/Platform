@@ -15,8 +15,8 @@ services:
   app:
     environment:
       - APP_DEBUG=false
-      - VITE_PLATFORM_URL=172.16.0.132:9090/core
-      - VITE_SEGURIDAD_URL=172.16.0.132:9000
+      - VITE_PLATFORM_URL=172.16.90:9090/core
+      - VITE_SEGURIDAD_URL=172.16.0.90:9000
     volumes:
       - ./app_container/platform_app:/app:cached
 

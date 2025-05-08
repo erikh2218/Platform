@@ -19,4 +19,6 @@ if [ -f "artisan" ]; then
     php artisan optimize:clear
 fi
 
+php artisan queue:work --timeout=30 --tries=3 &
+
 exec "$@"
