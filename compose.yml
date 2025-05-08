@@ -1,0 +1,36 @@
+name: platform
+
+services:
+  core :
+    build:
+      context: ./core_container
+      dockerfile: Dockerfile
+    container_name: platform_core
+    networks:
+      - platform-network
+    env_file:
+      - ./core_container/platform_core/.env
+    
+  app:
+    build:
+      context: ./app_container
+      dockerfile: Dockerfile
+    container_name: platform_app
+    networks:
+      - platform-network
+
+  publisher:
+    build:
+      context: ./nginx_container
+      dockerfile: Dockerfile
+    container_name: platform_publisher
+    volumes:
+      - ./app_container/platform_app/dist:/usr/share/nginx/html
+    depends_on:
+      - core
+    networks:
+      - platform-network
+      
+networks:
+  platform-network:
+    driver: bridge

@@ -1,0 +1,33 @@
+name: platform
+
+services:
+  core :
+    environment:
+      - LOG_LEVEL=error
+      - APP_DEBUG=false
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+    restart: always
+
+  app:
+    environment:
+      - APP_DEBUG=false
+      - VITE_PLATFORM_URL=172.16.0.132:9090/core
+      - VITE_SEGURIDAD_URL=172.16.0.132:9000
+    volumes:
+      - ./app_container/platform_app:/app:cached
+
+  publisher:
+    ports:
+      - "9090:80"
+      - "5190:8080"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+    restart: always
+        
