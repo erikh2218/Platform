@@ -1,0 +1,6 @@
+[submodule "core_container/solicit-api"]
+	path = core_container/platform_core
+	url = git@github.com:EJRDYA-Devs-Lima/solicit-api.git
+[submodule "app_container/solicit-ui"]
+	path = app_container/platform_app
+	url = git@github.com:EJRDYA-Devs-Lima/solicit-ui.git
