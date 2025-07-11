@@ -6,6 +6,10 @@ if [ -d "/var/www/core/storage" ]; then
     chown -R www-data:www-data /var/www/core/storage
 fi
 
+if [ ! -d "/var/www/core/storage/framework/views" ]; then
+    mkdir -p /var/www/core/storage/framework/views
+fi
+
 if [ -d "/var/www/core/bootstrap/cache" ]; then
     chmod -R 775 /var/www/core/bootstrap/cache
     chown -R www-data:www-data /var/www/core/bootstrap/cache
