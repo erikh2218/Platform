@@ -16,3 +16,5 @@ logs/
 # Archivos de sistema
 .DS_Store
 Thumbs.db
+app_container/platform_app
+core_container/platform_core
