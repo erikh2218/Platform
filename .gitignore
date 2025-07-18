@@ -1,0 +1,20 @@
+# Archivos de configuración de entorno
+conf/.env.development
+conf/.env.production
+conf/.env.test
+conf/.env.local
+*.env.local
+
+# Logs
+*.log
+logs/
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+app_container/platform_app
+core_container/platform_core

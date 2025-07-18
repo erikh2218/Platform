@@ -8,9 +8,7 @@ services:
     container_name: platform_core
     networks:
       - platform-network
-    env_file:
-      - ./core_container/platform_core/.env
-    
+
   app:
     build:
       context: ./app_container
@@ -30,7 +28,7 @@ services:
       - core
     networks:
       - platform-network
-      
+
 networks:
   platform-network:
     driver: bridge
