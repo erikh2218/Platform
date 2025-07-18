@@ -6,6 +6,8 @@ services:
       context: ./core_container
       dockerfile: Dockerfile
     container_name: platform_core
+    env_file: 
+      - ./conf/.env
     networks:
       - platform-network
 
@@ -14,6 +16,8 @@ services:
       context: ./app_container
       dockerfile: Dockerfile
     container_name: platform_app
+    env_file: 
+      - ./conf/.env
     networks:
       - platform-network
 

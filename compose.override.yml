@@ -2,17 +2,13 @@ name: platform
 
 services:
   core :
-    env_file: 
-      - ./conf/.env.development
     volumes:
       - ./core_container/platform_core:/var/www/core
 
   app:
-    env_file: 
-      - ./conf/.env.development
     environment:
-      - VITE_PLATFORM_URL=172.16.36:9090/core
-      - VITE_SEGURIDAD_URL=172.16.0.36:9000
+      - VITE_PLATFORM_URL=${SERVER_IP}:${PUBLISHER_CORE_PORT}/core
+      - VITE_SEGURIDAD_URL=${SERVER_IP}:${PUBLISHER_SECURITY_PORT}
     ports:
       - "${APP_PORT:-9636}:9636"
     volumes:
@@ -21,4 +17,4 @@ services:
   publisher:
     ports:
       - "${PUBLISHER_CORE_PORT:-9090}:80"
-      - "${PUBLISHER_APP_PORT:-5190}:8080"
+      # - "${PUBLISHER_APP_PORT:-5190}:8080"
