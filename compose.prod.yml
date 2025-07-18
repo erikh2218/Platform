@@ -24,6 +24,7 @@ services:
     ports:
       - "9090:80"
       - "5190:8080"
+      - "5195:8080"
     logging:
       driver: "json-file"
       options:
