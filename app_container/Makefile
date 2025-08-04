@@ -1,6 +1,6 @@
 # Variables
-DEV_COMPOSE_FILES = -f ../compose.yml -f ../compose.override.yml
-PROD_COMPOSE_FILES = -f ../compose.yml -f ../compose.prod.yml
+DEV_COMPOSE_FILES = -f ../compose.yml -f ../compose.override.yml --env-file ../conf/.env
+PROD_COMPOSE_FILES = -f ../compose.yml -f ../compose.prod.yml --env-file ../conf/.env
 
 # Comando para desplegar en desarrollo
 dev-up:

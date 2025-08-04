@@ -15,6 +15,12 @@ if [ -d "/var/www/core/bootstrap/cache" ]; then
     chown -R www-data:www-data /var/www/core/bootstrap/cache
 fi
 
+if [ ! -d "/var/www/core/storage/framework/sessions" ]; then
+    mkdir -p /var/www/core/storage/framework/sessions
+    chmod -R 775 /var/www/core/storage/framework/sessions
+    chown -R www-data:www-data /var/www/core/storage/framework/sessions
+fi
+
 if [ ! -d "vendor" ]; then
     composer install --no-interaction --prefer-dist --optimize-autoloader
 fi

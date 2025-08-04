@@ -9,10 +9,10 @@ RUN apt-get update && apt-get install -y tzdata && \
     ln -fs /usr/share/zoneinfo/America/Lima /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
 
-RUN apt-get update && apt-get install -y lsb-release ca-certificates apt-transport-https software-properties-common
+RUN apt-get install -y lsb-release ca-certificates apt-transport-https software-properties-common
 
 # Instalamos dependencias del sistema
-RUN apt-get update && apt-get install -y \
+RUN apt-get install -y \
     curl \
     nano \
     libpng-dev \
